@@ -61,7 +61,14 @@ async function onCommand(name, currentTab) {
       break;
 
     case "NEW_WINDOW":
-      chrome.windows.create({ state: "maximized" });
+      chrome.windows.create({
+        url: 'https://www.google.com', // Change URL as needed
+        left: 0,
+        top: 0,
+        width: Math.floor(win.width / 2),
+        height: win.height,
+        type: 'normal'
+    });
       break;
 
     case "NEW_INCOG_WINDOW":
